@@ -1,0 +1,41 @@
+.concentration {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 20px;
+    margin-bottom: 87px;
+}
+
+.concentration__card {
+    grid-row: 2;
+}
+
+@media (width<=1024px) {
+    .concentration {
+        display: flex;
+        flex-direction: column;
+        gap: 23px;
+        margin-bottom: 81px;
+    }
+
+    .concentration__title {
+        max-width: 236px;
+        width: 100%;
+    }
+
+}
+
+@media (width<=375px) {
+    .concentration {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+    }
+
+    .concentration__title {
+        max-width: 355px;
+        width: 100%;
+    }
+
+}

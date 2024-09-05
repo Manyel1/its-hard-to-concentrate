@@ -1,0 +1,41 @@
+.superconcentration {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(6, auto);
+    gap: 11px;
+    row-gap: 23px;
+    margin-bottom: 58px;
+}
+
+.superconcentration__sub-title {
+    height: 23.4px;
+    margin-bottom: 10px;
+}
+
+.superconcentration__card {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (width<=1024px) {
+    .superconcentration {
+        gap: 20px;
+        row-gap: 24px;
+    }
+}
+
+@media (width<=375px) {
+    .superconcentration {
+        display: flex;
+        flex-direction: column;
+        margin: 55px 0;
+    }
+
+    .superconcentration__sub-title {
+        height: auto;
+        max-width: 355px;
+        width: 100%;
+    }
+
+}

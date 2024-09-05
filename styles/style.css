@@ -1,5 +1,11 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
-.page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-}
+@import url('/styles/variables.css');
+@import url('/styles/light.css');
+@import url('/styles/dark.css');
+@import url('/styles/globals.css');
+@import url('/styles/header.css');
+@import url('/styles/button.css');
+@import url('/styles/focused.css');
+@import url('/styles/concentration.css');
+@import url('/styles/superconcentraation.css');
+@import url('/styles/image.css');
+@import url('/styles/footer.css');

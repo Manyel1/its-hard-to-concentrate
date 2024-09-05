@@ -1,0 +1,36 @@
+.focused {
+    display: grid;
+    grid-template-columns: 1fr 1.95fr;
+    grid-template-rows: auto auto;
+    margin-top: 197px;
+    row-gap: 23px;
+    margin-bottom: 84px;
+
+}
+
+.focused__card {
+    grid-column: 2;
+}
+@media (width<=1024px) {
+    .focused {
+        margin-top: 240px;
+        row-gap: 23px;
+        margin-bottom: 84px;
+        column-gap: 15px;
+    }
+    .focused__title{
+        max-width: 236px;
+        width: 100%;
+    }
+}
+@media (width<=375px) {
+    .focused {
+       display: flex;
+       flex-direction: column;
+       margin: 105px 0 57px;
+    }
+    .focused__title{
+        max-width: 355px;
+        width: 100%;
+    }
+}
