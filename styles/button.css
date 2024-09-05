@@ -15,7 +15,21 @@
     border: 1px solid var(--accent-color);
     pointer-events: none;
 }
-
 .header__theme-menu-button:hover {
-    border-bottom: 1px solid var(--accent-color);
+    transition: color 0.5s;
+
+}
+::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    margin-top: 3px;
+    background-color: black;
+    transition: width 300ms, background-color 0.5s;
+
+}
+.header__theme-menu-button:hover::after {
+    width: 100%;
+    background-color: var(--accent-color);
 }

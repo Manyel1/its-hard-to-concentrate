@@ -118,8 +118,6 @@
         border-left: 1px solid var(--accent-color);
     }
 }
-
-
 @media (width<=375px) {
     .page {
         padding: 10px;

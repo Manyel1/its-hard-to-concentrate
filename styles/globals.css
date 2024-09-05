@@ -1,8 +1,11 @@
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+:root {
+  --transition: all 0.2s ease-in-out;
 }
 
 body {
@@ -40,10 +43,12 @@ a {
   font-size: inherit;
   line-height: inherit;
 }
+
 .page {
   width: 100%;
   padding: 20px;
 }
+
 .title-decor {
   color: var(--title-color);
   background-color: var(--background-color);
@@ -51,18 +56,21 @@ a {
   line-height: 23.4px;
   font-size: 18px;
 }
+
 .card-text {
   color: var(--text-color);
   font-size: 18px;
   font-weight: 400;
   line-height: 23px;
 }
+
 .section__title {
   color: var(--accent-color);
   font-size: 18px;
   font-weight: 700;
   line-height: 23.4px;
 }
+
 .superconcentration__card-title {
   color: var(--title-color);
   background-color: var(--background-color);
@@ -75,4 +83,17 @@ a {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.no-view-transition::view-transition-old(root) {
+  animation: none;
+}
+
+.no-view-transition::view-transition-new(root) {
+  animation: none;
+}
+
+.reverse::view-transition-old(root) {
+  background: none;
+  z-index: 2;
 }
