@@ -1,4 +1,24 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #FF8DCB;
+    --accent-color: #353430;
+    --title-color: #353430;
+    --text-color: #353430;
+    background-image: url(../images/cover-image-light.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #FF0070;
+    --title-color: #000028;
+    --accent-color: #ff0070;
+    --text-color: #F1B2CE;
+    background-image: url(../images/cover-image-dark.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+}

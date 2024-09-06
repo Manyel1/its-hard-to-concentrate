@@ -1,0 +1,35 @@
+.header__theme-menu-button {
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 2px 13px;
+
+}
+
+.header__theme-menu-button_active {
+    border: 1px solid var(--accent-color);
+    pointer-events: none;
+}
+.header__theme-menu-button:hover {
+    transition: color 0.5s;
+
+}
+::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    margin-top: 3px;
+    background-color: black;
+    transition: width 300ms, background-color 0.5s;
+
+}
+.header__theme-menu-button:hover::after {
+    width: 100%;
+    background-color: var(--accent-color);
+}

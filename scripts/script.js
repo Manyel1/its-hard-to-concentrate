@@ -13,7 +13,7 @@ themeButtons.forEach((button) => {
     } else if (
       [...button.classList].includes('header__theme-menu-button_type_dark')
     ) {
-      changeTheme('dark');
+      toggleDarkMode("dark", changeTheme, button)
     } else {
       changeTheme('auto');
     }
@@ -44,5 +44,43 @@ function initTheme() {
       .setAttribute('disabled', true);
   }
 }
+
+const toggleDarkMode = async (
+  theme,
+  toggleTheme,
+  element,
+) => {
+  const transition = document.startViewTransition(() => {
+    toggleTheme();
+  });
+
+  const reverse = theme === 'dark';
+  
+  document.documentElement.classList.add('no-view-transition');
+  document.documentElement.classList.toggle('reverse', reverse);
+
+  const { top, left, width, height } = element.getBoundingClientRect();
+  const x = left + width / 2;
+  const y = top + height / 2;
+  const endRadius = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
+
+  transition.ready.then(() => {
+    document.documentElement.animate(
+      {
+        clipPath: [`circle(0 at ${x}px ${y}px)`, `circle(${endRadius}px at ${x}px ${y}px)`],
+      },
+      {
+        duration: 650,
+        easing: 'ease-in-out',
+        pseudoElement: `::view-transition-${reverse ? 'old' : 'new'}(root)`,
+        direction: reverse ? 'reverse' : 'normal',
+      },
+    );
+  });
+  transition.finished.finally(() => {
+    document.documentElement.classList.remove('no-view-transition', 'reverse');
+  });
+};
+
 
 initTheme();
